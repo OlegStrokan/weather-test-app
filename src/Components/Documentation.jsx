@@ -43,7 +43,7 @@ export const Documentation = () => {
     return <Card className={classes.root}>
         <Typography variant="h5">Documentation</Typography>
                 <Typography variant="subtitle1" className={classes.middleText}>REST API: <a href="http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=60.99&lon=30.9&dt=1627305861&appid=55598e00e9fc9fb8f3777e1dd9e2aef8">http://api.openweathermap.org</a></Typography>
-        <Typography variant="h6">Query params:</Typography>
+        <Typography variant="h6">Query params for request:</Typography>
         <TableContainer component={Paper} className={classes.queryParams}>
             <Table className={classes.table} size="small" aria-label="a dense table">
                 <TableBody>

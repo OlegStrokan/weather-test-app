@@ -19,9 +19,17 @@ const useStyles = makeStyles({
     item: {
         width: '70vw',
         margin: '50px auto',
+        padding: '25px',
         backgroundColor: '#efefef',
     },
-
+    icon: {
+        width: '30px',
+    },
+    cellIcon: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 });
 
 
@@ -35,17 +43,6 @@ export const Main = () => {
         let seconds = "0" + date.getSeconds();
         return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
     }
-    let temp, time;
-
-    const getTempForGraph = (array) => {
-         temp = array.hourly.map(arr => arr.temp + ',')
-        return temp
-    }
-    const getTimeForGraph = (array) => {
-        time = array.hourly.map(arr => arr.dt + ',')
-        return time
-    }
-
 
     const weatherData = useSelector(getWeatherDataSelector);
     const dispatch = useDispatch()
@@ -75,7 +72,7 @@ export const Main = () => {
                 <Table aria-label="customized table">
                     <TableHead>
                         <TableRow>
-                            <TableCell align="center">Time (unix):</TableCell>
+                            <TableCell align="center">Time:</TableCell>
                             <TableCell align="center">Humidity:</TableCell>
                             <TableCell align="center">Visibility:</TableCell>
                             <TableCell align="center">Main:</TableCell>
@@ -89,7 +86,7 @@ export const Main = () => {
                                 <TableCell align="center">{convertToUtcData(row.dt).slice(0, -3)}</TableCell>
                                 <TableCell align="center">{row.humidity}</TableCell>
                                <TableCell align="center">{row.visibility}</TableCell>
-                                <TableCell align="center">{row.weather[0].main}</TableCell>
+                                <TableCell align="center" className={classes.cellIcon}><img className={classes.icon} src={`http://openweathermap.org/img/w/${row.weather[0].icon}.png`}/>{row.weather[0].main}</TableCell>
                                 <TableCell align="center">{row.temp}</TableCell>
                                 <TableCell align="center">{row.feels_like}</TableCell>
                             </TableRow>
