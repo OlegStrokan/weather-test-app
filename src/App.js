@@ -1,7 +1,7 @@
 import React from 'react';
-import {Documentation} from "./Components/Documentation";
+import {Documentation} from "./components/Documentation";
 import {Route} from "react-router-dom";
-import {Main} from "./Components/Main";
+import {Main} from "./components/Main";
 
 const App = () => {
     return <div>

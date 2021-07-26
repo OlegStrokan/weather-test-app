@@ -4,6 +4,7 @@ import {getWeatherDataSelector} from "../redux/weather-reducer/selectors";
 import {getWeatherData} from "../redux/weather-reducer/thunks";
 import Preloader from '../assets/preloader.gif'
 import {
+    Button,
     Card,
     CardContent,
     makeStyles,
@@ -14,6 +15,7 @@ import {
     Typography
 } from "@material-ui/core";
 import {ArgumentAxis, Chart, LineSeries, ValueAxis} from "@devexpress/dx-react-chart-material-ui";
+import {NavLink} from "react-router-dom";
 
 const useStyles = makeStyles({
     item: {
@@ -29,7 +31,13 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
+    button: {
+        textDecoration: 'none',
+        position: 'absolute',
+        top: '20px',
+        left: '20px',
+    },
 });
 
 
@@ -65,7 +73,8 @@ export const Main = () => {
     const dataForGraph2 = (getDataForGraph(weatherData))
 
 
-    return <Card>
+    return <Card data-test="mainPage">
+        <NavLink data-test="toDocumentationPage" className={classes.button} to={'/'}><Button variant="contained" color="primary">Back</Button></NavLink>
         <CardContent>
             <Typography align="center" variant="h5">Data in table</Typography>
             <TableContainer component={Paper} className={classes.item}>

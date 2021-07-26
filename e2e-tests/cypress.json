@@ -1,0 +1,16 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "integrationFolder": "cypress/integration",
+  "testFiles": [
+    "**/*.js"
+  ],
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
+  "retries": {
+    "openMode": 0,
+    "runMode": 1
+  },
+  "env": {
+    "TAGS": "not @ignore"
+  }
+}

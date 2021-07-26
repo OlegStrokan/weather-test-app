@@ -40,7 +40,7 @@ const useStyles = makeStyles({
 
 export const Documentation = () => {
     const classes = useStyles();
-    return <Card className={classes.root}>
+    return <Card className={classes.root} data-test="DocumentationPage">
         <Typography variant="h5">Documentation</Typography>
                 <Typography variant="subtitle1" className={classes.middleText}>REST API: <a href="http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=60.99&lon=30.9&dt=1627305861&appid=55598e00e9fc9fb8f3777e1dd9e2aef8">http://api.openweathermap.org</a></Typography>
         <Typography variant="h6">Query params for request:</Typography>
@@ -62,6 +62,6 @@ export const Documentation = () => {
                 </TableBody>
             </Table>
         </TableContainer>
-            <NavLink className={classes.button} to={'/main'}><Button variant="contained" color="primary">Go To App</Button></NavLink>
+            <NavLink className={classes.button} to={'/main'}><Button data-test="toMainPage" variant="contained" color="primary">Go To App</Button></NavLink>
     </Card>
 }

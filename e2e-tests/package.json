@@ -1,0 +1,19 @@
+{
+  "name": "e2e",
+  "version": "0.0.1",
+  "main": "index.js",
+  "devDependencies": {
+    "cypress": "^7.5.0",
+    "cypress-cucumber-preprocessor": "^4.1.2",
+    "cypress-log-to-output": "^1.1.2"
+  },
+  "scripts": {
+    "yarn-install": "yarn install",
+    "test": "node_modules\\.bin\\cypress run --headed --browser chrome",
+    "runtests": "npm run test -- "
+    },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/integration"
+  }
+}
